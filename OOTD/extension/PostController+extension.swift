@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 extension PostViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    
+    //hehehehe
     
     func PostPicHandler() {
         let picker = UIImagePickerController()
