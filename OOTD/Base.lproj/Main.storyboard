@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -209,7 +209,7 @@
                                     <action selector="dismisscontroller:" destination="rDQ-zM-OFT" eventType="touchUpInside" id="jcD-pa-Huz"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Say Something........" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HD3-Wq-yhF">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HD3-Wq-yhF">
                                 <rect key="frame" x="22" y="122" width="337" height="218"/>
                                 <color key="backgroundColor" white="1" alpha="0.014394263698630137" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="1" alpha="0.84217144691780821" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -227,8 +227,8 @@
                                     <action selector="postbutton:" destination="rDQ-zM-OFT" eventType="touchUpInside" id="ooH-RY-wuu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNb-hY-Fl3">
-                                <rect key="frame" x="327" y="746" width="32" height="32"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNb-hY-Fl3">
+                                <rect key="frame" x="301" y="730" width="58" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="eTD-uI-7JC"/>
                                     <constraint firstAttribute="height" constant="32" id="oKR-m2-YHf"/>
@@ -248,6 +248,7 @@
                             <constraint firstItem="44T-z1-rVe" firstAttribute="centerY" secondItem="3Ee-1k-XCM" secondAttribute="centerY" id="GNP-O1-gNd"/>
                             <constraint firstItem="ZKl-R2-Bcg" firstAttribute="centerY" secondItem="44T-z1-rVe" secondAttribute="centerY" id="KQc-4f-Fbf"/>
                             <constraint firstItem="44T-z1-rVe" firstAttribute="centerX" secondItem="3Ee-1k-XCM" secondAttribute="centerX" id="KVJ-ub-iNM"/>
+                            <constraint firstItem="Nxw-vB-VIp" firstAttribute="trailing" secondItem="TNb-hY-Fl3" secondAttribute="trailing" constant="16" id="OBS-Q5-f8q"/>
                             <constraint firstItem="Nxw-vB-VIp" firstAttribute="trailing" secondItem="TNb-hY-Fl3" secondAttribute="trailing" constant="16" id="eaX-xA-Kob"/>
                             <constraint firstItem="jjH-Os-EvH" firstAttribute="leading" secondItem="Iof-R0-g9c" secondAttribute="trailing" constant="28" id="eqO-qh-yAU"/>
                             <constraint firstItem="Nxw-vB-VIp" firstAttribute="trailing" secondItem="jjH-Os-EvH" secondAttribute="trailing" constant="36" id="gPZ-LD-owQ"/>
@@ -259,6 +260,7 @@
                             <constraint firstItem="ZKl-R2-Bcg" firstAttribute="leading" secondItem="Nxw-vB-VIp" secondAttribute="leading" constant="44" id="vBb-YU-aMz"/>
                             <constraint firstItem="jjH-Os-EvH" firstAttribute="top" secondItem="Nxw-vB-VIp" secondAttribute="top" constant="3" id="vrN-N5-Olu"/>
                             <constraint firstItem="44T-z1-rVe" firstAttribute="width" secondItem="3Ee-1k-XCM" secondAttribute="width" id="yaK-ez-soF"/>
+                            <constraint firstItem="Nxw-vB-VIp" firstAttribute="bottom" secondItem="TNb-hY-Fl3" secondAttribute="bottom" id="z2p-hR-X5P"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Nxw-vB-VIp"/>
                     </view>
@@ -266,7 +268,6 @@
                         <outlet property="Postbutton" destination="ZKl-R2-Bcg" id="4GR-NM-u2Z"/>
                         <outlet property="postimageview" destination="44T-z1-rVe" id="6sk-MG-RXp"/>
                         <outlet property="posttextview" destination="HD3-Wq-yhF" id="9Ma-HB-DwP"/>
-                        <segue destination="tII-ML-1ow" kind="presentation" identifier="backseguewway" id="Uef-PP-1aa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cMg-3y-XAv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -470,6 +471,5 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="UeX-QA-aaX"/>
-        <segue reference="Uef-PP-1aa"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -13,14 +13,19 @@ class PostViewController: UIViewController {
     @IBOutlet weak var postimageview: UIImageView!
     @IBOutlet weak var posttextview: UITextView!
     @IBOutlet weak var Postbutton: UIButton!
+    var Placeholdertext = "Say Something....."
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         Postbutton.layer.cornerRadius = 3
+        posttextview.textColor = UIColor.lightGray
+        textViewDidBegininEditing(posttextview)
     }
 
-    
+   
 
     @IBAction func dismisscontroller(_ sender: Any){
         dismiss(animated: true, completion: nil)
@@ -32,6 +37,20 @@ class PostViewController: UIViewController {
     }
     @IBAction func addimageHandler(_ sender: Any) {
         PostPicHandler()
+    }
+    
+    
+    func textViewDidBegininEditing(_ posttextview: UITextView) {
+        if posttextview.textColor == UIColor.lightGray {
+            posttextview.text = nil
+            posttextview.textColor = UIColor.black
+        }
+        else if posttextview.text.isEmpty {
+            posttextview.text = Placeholdertext
+            posttextview.textColor = UIColor.lightGray
+        }
+        
+        
     }
     
     func PostHandler() {
@@ -63,9 +82,10 @@ class PostViewController: UIViewController {
                 
                
             }
-             self.performSegue(withIdentifier: "backseguewway", sender: nil)
+             self.dismiss(animated: true, completion: nil)
         }
        
     }
+    
     
 }
