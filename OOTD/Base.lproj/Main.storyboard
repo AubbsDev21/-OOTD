@@ -120,7 +120,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotoCell" rowHeight="450" id="o7b-Se-94X">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotoCell" rowHeight="450" id="o7b-Se-94X" customClass="PhotoViewCell" customModule="OOTD" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="450"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o7b-Se-94X" id="hxW-oS-FGf">
@@ -163,6 +163,11 @@
                                     <constraint firstItem="btL-3i-XNh" firstAttribute="width" secondItem="o7b-Se-94X" secondAttribute="width" id="jce-6M-7fj"/>
                                     <constraint firstAttribute="trailing" secondItem="kK0-M7-dmh" secondAttribute="trailing" constant="8" id="tnb-NO-W08"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="CaptionLabel" destination="bTE-Gl-m3A" id="bV0-kk-DW1"/>
+                                    <outlet property="captionView" destination="kK0-M7-dmh" id="dWU-UK-snN"/>
+                                    <outlet property="postImageView" destination="btL-3i-XNh" id="k8S-jg-r7s"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -209,7 +214,7 @@
                                     <action selector="dismisscontroller:" destination="rDQ-zM-OFT" eventType="touchUpInside" id="jcD-pa-Huz"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HD3-Wq-yhF">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Say Something......" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HD3-Wq-yhF">
                                 <rect key="frame" x="22" y="122" width="337" height="218"/>
                                 <color key="backgroundColor" white="1" alpha="0.014394263698630137" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="1" alpha="0.84217144691780821" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

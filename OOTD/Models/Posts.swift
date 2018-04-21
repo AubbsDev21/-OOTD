@@ -14,4 +14,5 @@ class Posts: NSObject {
     var postPic: String?
     var Description: String?
     var UID:  String?
+    var timestamp: NSNumber?
 }
