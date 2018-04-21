@@ -34,7 +34,7 @@ class PhotoViewCell: UITableViewCell {
         self.CaptionLabel.text = post?.Description
         
         
-        self.postImageView.loadImagewithURLString(URLString: (post?.postPic)!)
+        self.postImageView.loadImageUsingCacheWithUrlString((post?.postPic)!)
     }
     
 }

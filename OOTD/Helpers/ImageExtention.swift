@@ -7,33 +7,42 @@
 //
 
 import UIKit
-let cacheBank = NSCache<AnyObject, AnyObject>()
+import Firebase
+
+let imageCache = NSCache<NSString, UIImage>()
 
 extension UIImageView {
-    func loadImagewithURLString(URLString: String) {
+    
+    func loadImageUsingCacheWithUrlString(_ urlString: String) {
         
-        if let cacheImage = cacheBank.object(forKey: URLString as AnyObject) as? UIImage {
-            self.image = cacheImage
+        self.image = nil
+        
+        //check cache for image first
+        if let cachedImage = imageCache.object(forKey: urlString as NSString) {
+            self.image = cachedImage
             return
         }
         
-        let url = NSURL(string: URLString)
-        let reqeust = URLRequest(url: url! as URL)
-        URLSession.shared.dataTask(with: reqeust) { (data, res, err) in
-         
-            if err != nil {
-                print(err)
+        //otherwise fire off a new download
+        let url = URL(string: urlString)
+        URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
+            
+            //download hit an error so lets return out
+            if error != nil {
+                print(error)
                 return
             }
-            DispatchQueue.main.async {
-                //dowloads everyimage from firebase and puts it into a cache bank
+            
+            DispatchQueue.main.async(execute: {
+                
                 if let downloadedImage = UIImage(data: data!) {
-                    cacheBank.setObject(downloadedImage, forKey: URLString as AnyObject)
+                    imageCache.setObject(downloadedImage, forKey: urlString as NSString)
+                    
                     self.image = downloadedImage
                 }
-                
-            }
-        }
-        
+            })
+            
+        }).resume()
     }
 }
+

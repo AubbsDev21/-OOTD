@@ -53,7 +53,7 @@ class FeedViewController: UITableViewController {
                     let post = Posts()
                     let uid = value["UID"] as? String ?? " "
                     let description = value["description"] as? String ?? " "
-                    let postImageURL = value["post"] as? String ?? " "
+                    let postImageURL = value["postImageURL"] as? String ?? " "
                     let timestamp = value["timestamp"] as? NSNumber
                    
                     post.id = child.key
